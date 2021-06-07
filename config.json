@@ -1,0 +1,43 @@
+{
+    "STATUS_WORKING":"status-working",
+    "STATUS_WORKING_WITH_ERROR":"status-working-with-error",
+    "WORKING_BLOCK":"working-block",
+    "WORKING_BLOCK_WITH_ERROR":"working-with-error-block",
+  
+    "i18n":{
+        "zh_CN":{
+            "PROVIDER":"此错误界面由ChenYFan制作",
+            "PROVIDER_URL":"https://blog.cyfan.top",
+            "CLIENT":"您",
+            "RES":"这是由CloudFlare返回的错误详细信息",
+            "EDGE":"ChenYFanの边缘节点",
+            "SERVER":"ChenYFanの服务器",
+            "SIMPLR_WHY":"这是怎么回事？",
+            "SIMPLR_HOW":"我能干点啥？",
+            "YOUR_IP":"您的IP是：",
+            "YOUR_REQID":"本次请求的ID是：",
+            "WORKING":"正常",
+            "1XXX": {
+                "TITLE": "1XXX | 服务器拒绝了您的请求",
+                "CODE":"1XXX",
+                "SIMPLR_DES":"您的访问受阻",
+                "WEB_STATUS":false,
+                "WEB_ERROR":"你的操作使我们感到了危险",
+                "EDGE_STATUS":true,
+                "SERVER_STATUS":true
+            },
+            "UNKNOW":{
+                "TITLE":"??? | 发生了一件意外中的错误",
+                "CODE":"???",
+                "SIMPLR_DES":"我们甚至不知道错误出现在哪儿",
+                "WEB_STATUS":false,
+                "WEB_ERROR":"未知的错误",
+                "EDGE_STATUS":false,
+                "EDGE_ERROR":"未知的错误",
+                "SERVER_STATUS":false,
+                "SERVER_ERROR":"未知的错误"
+
+            }
+        }
+    }
+}
