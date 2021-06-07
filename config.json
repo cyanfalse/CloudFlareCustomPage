@@ -1,8 +1,10 @@
 {
-    "STATUS_WORKING":"status-working",
-    "STATUS_WORKING_WITH_ERROR":"status-working-with-error",
-    "WORKING_BLOCK":"working-block",
-    "WORKING_BLOCK_WITH_ERROR":"working-with-error-block",
+    "STATUS_WORKING":"green-text",
+    "STATUS_WORKING_WITH_ISSUE":"yellow-text",
+    "STATUS_WORKING_WITH_ERROR":"red-text",
+    "WORKING_BLOCK":"green-card",
+    "WORKING_BLOCK_WITH_ISSUE":"yellow-card",
+    "WORKING_BLOCK_WITH_ERROR":"red-card",
   
     "i18n":{
         "zh_CN":{
@@ -21,20 +23,77 @@
                 "TITLE": "1XXX | 服务器拒绝了您的请求",
                 "CODE":"1XXX",
                 "SIMPLR_DES":"您的访问受阻",
-                "WEB_STATUS":false,
-                "WEB_ERROR":"你的操作使我们感到了危险",
-                "EDGE_STATUS":true,
-                "SERVER_STATUS":true
+                "WEB_STATUS":1,
+                "WEB_ERROR":"可能是您的操作使我们感到危险",
+                "EDGE_STATUS":2,
+                "EDGE_ERROR":"边缘节点无法为您提供所需的页面",
+                "SERVER_STATUS":0
+            },
+            "5XX": {
+                "TITLE": "5XX | 我们的服务器宕机了",
+                "CODE":"5XX",
+                "SIMPLR_DES":"无法连接到源服务器",
+                "WEB_STATUS":0,
+                "EDGE_STATUS":0,
+                "SERVER_ERROR":"我们服务器炸了",
+                "SERVER_STATUS":2
+            },
+            "5S": {
+                "TITLE": "WAIT | 嗨！停停！",
+                "CODE":"WAIT",
+                "SIMPLR_DES":"稍等5S即可访问",
+                "WEB_STATUS":0,
+                "EDGE_STATUS":1,
+                "EDGE_ERROR":"我们感觉我们被打了，因此将您停了一下",
+                "SERVER_STATUS":0
+            },
+            "AO": {
+                "TITLE": "DOWN | 服务器未能积极响应请求",
+                "CODE":"DOWN",
+                "SIMPLR_DES":"服务器已下线，并且我们未能从缓存恢复",
+                "WEB_STATUS":0,
+                "EDGE_STATUS":1,
+                "EDGE_ERROR":"边缘节点未能检索到相应的缓存给您",
+                "SERVER_ERROR":"服务器未能积极响应请求",
+                "SERVER_STATUS":2
+            },
+            "CAP": {
+                "TITLE": "CAPTCHA | 您需要人机验证",
+                "CODE":"CAPTCHA",
+                "SIMPLR_DES":"服务暂不可用，请进行人机验证",
+                "WEB_STATUS":2,
+                "WEB_ERROR":"您的请求使我们感到了危险，因此将您拦截。",
+                "EDGE_STATUS":1,
+                "EDGE_ERROR":"我们需要您的人机验证后才能为您提供服务。",
+                "SERVER_STATUS":0
+            },
+            "IP_BAN": {
+                "TITLE": "1006 | 我们无法为您提供服务",
+                "CODE":"1006",
+                "SIMPLR_DES":"我们不向您提供服务",
+                "WEB_STATUS":2,
+                "WEB_ERROR":"您的地区或IP不被支持",
+                "EDGE_STATUS":0,
+                "SERVER_STATUS":0
+            },
+            "WAF_BAN": {
+                "TITLE": "BLOCKED | 我们无法为您提供服务",
+                "CODE":"BLOCKED",
+                "SIMPLR_DES":"我们不向您提供服务",
+                "WEB_STATUS":2,
+                "WEB_ERROR":"您已被封禁",
+                "EDGE_STATUS":0,
+                "SERVER_STATUS":0
             },
             "UNKNOW":{
                 "TITLE":"??? | 发生了一件意外中的错误",
                 "CODE":"???",
                 "SIMPLR_DES":"我们甚至不知道错误出现在哪儿",
-                "WEB_STATUS":false,
+                "WEB_STATUS":2,
                 "WEB_ERROR":"未知的错误",
-                "EDGE_STATUS":false,
+                "EDGE_STATUS":2,
                 "EDGE_ERROR":"未知的错误",
-                "SERVER_STATUS":false,
+                "SERVER_STATUS":2,
                 "SERVER_ERROR":"未知的错误"
 
             }

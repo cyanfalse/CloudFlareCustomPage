@@ -37,18 +37,18 @@
             background-color: var(--background-color);
         }
 
-        nav {
+        header {
             margin-left: 1rem;
         }
 
-        nav description {
+        header description {
             font-family: Ubuntu, Roboto, Noto Sans SC, sans-serif;
             font-size: var(--font-size-description);
             line-height: var(--fonr-size-description);
             color: var(--font-color-lighter);
         }
 
-        nav main {
+        header main {
             font-size: var(--font-size-main);
             line-height: var(--font-size-main);
             font-family: Fira Mono, Ubuntu, monospace;
@@ -56,6 +56,10 @@
 
         code {
             font-family: Fira Mono, monospace;
+        }
+
+        none {
+            display: none;
         }
 
         status {
@@ -67,7 +71,7 @@
             align-items: center;
         }
 
-        status block.status-block {
+        status>card {
             background-color: var(--box-color);
             padding: 2rem;
             margin: 1rem 1rem;
@@ -76,32 +80,32 @@
             flex-grow: 1;
         }
 
-        status block.status-block.working-block {
+        status>card.green-card {
             background-color: var(--working-color-background);
         }
 
-        status block.status-block.error-block {
+        status>card.red-card {
             background-color: var(--error-color-background);
         }
 
-        status block.status-block.working-with-error-block {
+        status>card.yellow-card {
             background-color: var(--working-with-error-color-background);
         }
 
 
-        .status-block main {
+        status>card main {
             font-size: calc(var(--font-size-description) + 0.1rem);
         }
 
-        .status-working {
+        .green-text {
             color: var(--working-color);
         }
 
-        .status-error {
+        .red-text {
             color: var(--error-color);
         }
 
-        .status-working-with-error {
+        .yellow-text {
             color: var(--working-with-error-color);
         }
 
@@ -119,7 +123,7 @@
             flex-direction: row;
             flex-wrap: wrap;
             justify-content: space-between;
-            align-items: center;
+            align-items: baseline;
 
         }
 
@@ -141,7 +145,7 @@
             font-size: calc(var(--font-size-description) - 0.4rem);
         }
 
-        footer>request-status {
+        footer>text {
             font-size: calc(var(--font-size-description) - 0.6rem);
         }
 
@@ -167,7 +171,7 @@
                 font-size: calc(var(--font-size-description) - 0.2rem);
             }
 
-            footer>request-status {
+            footer>text {
                 font-size: calc(var(--font-size-description) - 0.4rem);
             }
         }
@@ -177,7 +181,7 @@
                 margin: 8% 10%;
             }
 
-            nav * {
+            header>* {
                 display: inline-block;
                 margin-left: 1%;
             }
@@ -198,16 +202,16 @@
 </head>
 
 <body>
-    <nav>
+    <header>
         <main>
             <!--CODE-->
         </main>
         <description>
             <!--SIMPLR_DES-->
         </description>
-    </nav>
+    </header>
     <status>
-        <block class="status-block <!--WEB_BLOCK_STATUS-->" id="client-status-block">
+        <card class="<!--WEB_BLOCK_STATUS-->" id="client-status-card">
             <icon class="material-icons-outlined <!--WEB_STATUS-->">web</icon>
             <main>
                 <!--CLIENT-->
@@ -215,8 +219,8 @@
             <status-text class="<!--WEB_STATUS-->">
                 <!--WEB_STATUS_DES-->
             </status-text>
-        </block>
-        <block class="status-block <!--EDGE_BLOCK_STATUS-->" id="edge-status-block">
+        </card>
+        <card class="<!--EDGE_BLOCK_STATUS-->" id="edge-status-card">
             <icon class="material-icons-outlined <!--EDGE_STATUS-->">cloud</icon>
             <main>
                 <!--EDGE-->
@@ -224,8 +228,8 @@
             <status-text class="<!--EDGE_STATUS-->">
                 <!--EDGE_STATUS_DES-->
             </status-text>
-        </block>
-        <block class="status-block <!--SERVER_BLOCK_STATUS-->" id="website-status-block">
+        </card>
+        <card class="<!--SERVER_BLOCK_STATUS-->" id="website-status-block">
             <icon class="material-icons-outlined <!--SERVER_STATUS-->">dns</icon>
             <main>
                 <!--SERVER-->
@@ -233,7 +237,7 @@
             <status-text class="<!--SERVER_STATUS-->">
                 <!--SERVER_STATUS_DES-->
             </status-text>
-        </block>
+        </card>
     </status>
     <reason>
         <explain>
